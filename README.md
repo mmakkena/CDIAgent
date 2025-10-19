@@ -35,14 +35,19 @@ It utilizes a **Retrieval-Augmented Generation (RAG)** framework, grounding the 
 ### 2\. Install Dependencies
 
 Install the required packages using `pip`. Note that `torch` and `accelerate` are crucial for the model loading.
+
 ```bash
-pip install langchain-community
+source CDIAgent/bin/activate
+pip3 install langchain-core
+pip3 install langchain-community
+pip3 install langchain-text-splitters
+```
+
+```bash
+pip3 install torch transformers accelerate langchain faiss-cpu pydantic fastapi uvicorn
 ```
 ```bash
-pip install torch transformers accelerate langchain faiss-cpu pydantic fastapi uvicorn
-```
-```bash
-pip install chromadb langchain-chroma
+pip3 install chromadb langchain-chroma
 ```
 -----
 
