@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 # Import the necessary functions from the CDI RAG system file
-# NOTE: Ensure cdi_rag_system.py is in the same directory.
+# NOTE: This assumes cdi_rag_system.py is in the same directory AND HAS BEEN FIXED.
 from cdi_rag_system import get_llm_pipeline, setup_chroma_db, create_rag_chain, SYSTEM_PROMPT
 
 # --- 1. FastAPI and State Initialization ---
@@ -52,7 +52,6 @@ async def startup_event():
 
     except Exception as e:
         print(f"FATAL ERROR during startup: {e}")
-        # In a real environment, you might stop the process here.
         qa_chain = None
         raise RuntimeError("RAG components failed to initialize. Check model and database setup.") from e
 
@@ -70,6 +69,8 @@ async def generate_cdi_query(request: QueryRequest):
     try:
         # Run the RAG Chain
         print(f"Processing note: '{request.clinical_note[:50]}...'")
+        
+        # NOTE: Using a non-blocking call for production performance
         result = await qa_chain.acall({"query": request.clinical_note, "system_prompt": SYSTEM_PROMPT})
         
         # Extract and format the results
