@@ -1,13 +1,13 @@
 import os
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain.llms import HuggingFacePipeline
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma  # Changed from FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Chroma
 
 # --- Configuration Constants ---
 MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"
