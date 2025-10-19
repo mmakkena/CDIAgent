@@ -1,13 +1,22 @@
 import os
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+
+# Modules moved to separate packages:
+# 1. From langchain-community
 from langchain_community.document_loaders import TextLoader 
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_core.prompts import PromptTemplate
-from langchain.chains.retrieval_qa import RetrievalQA
-from langchain.llms import HuggingFacePipeline
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma 
+
+# 2. From langchain-text-splitters
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+# 3. From langchain-core (Note: Prompts moved here)
+from langchain_core.prompts import PromptTemplate
+
+# 4. These should remain in the core 'langchain' package IF updated successfully:
+from langchain.chains import RetrievalQA  # This relies on the packages above being installed!
+from langchain.llms import HuggingFacePipeline
 
 # --- Configuration Constants ---
 MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"
