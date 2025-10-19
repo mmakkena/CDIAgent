@@ -39,7 +39,9 @@ Install the required packages using `pip`. Note that `torch` and `accelerate` ar
 ```bash
 pip install torch transformers accelerate langchain faiss-cpu pydantic fastapi uvicorn
 ```
-
+```bash
+pip install chromadb langchain-chroma
+```
 -----
 
 ## 🚀 Usage
