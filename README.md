@@ -38,16 +38,16 @@ Install the required packages using `pip`. Note that `torch` and `accelerate` ar
 
 ```bash
 source CDIAgent/bin/activate
-pip3 install langchain-core
-pip3 install langchain-community
-pip3 install langchain-text-splitters
+pip install langchain-core
+pip install langchain-community
+pip install langchain-text-splitters
 ```
 
 ```bash
-pip3 install torch transformers accelerate langchain faiss-cpu pydantic fastapi uvicorn
+pip install torch transformers accelerate langchain faiss-cpu pydantic fastapi uvicorn
 ```
 ```bash
-pip3 install chromadb langchain-chroma
+pip install chromadb langchain-chroma
 ```
 -----
 
