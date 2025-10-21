@@ -1,0 +1,38 @@
+# MANIFEST.in - Specifies additional files to include in distribution package
+
+# Include documentation
+include README.md
+include LICENSE
+include CHANGELOG.md
+include CLAUDE.md
+
+# Include configuration files
+include requirements.txt
+include requirements-test.txt
+include pytest.ini
+include setup.py
+
+# Include documentation files
+include SYSTEM_ANALYSIS.md
+include REFACTORING_SUMMARY.md
+include RERANKING_SUMMARY.md
+
+# Include data files
+recursive-include cdi_rag/data *.py
+
+# Include tests (optional)
+recursive-include tests *.py
+
+# Exclude compiled Python files
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
+
+# Exclude backup files
+global-exclude *.bak
+global-exclude *~
+
+# Exclude development files
+exclude .gitignore
+exclude .git
+prune .git

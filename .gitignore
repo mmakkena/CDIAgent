@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+CDIAgent_3.11.11/
+CDIAgent_3.13/
+venv/
+env/
+ENV/
+
+# Database
+chroma_db_cdi/
+*.db
+*.sqlite
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# Model downloads cache
+.cache/
+models/
+
+# Data files (can be large)
+mtsamples_cdi.json
+
+# Logs
+*.log
